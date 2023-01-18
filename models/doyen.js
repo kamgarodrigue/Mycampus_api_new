@@ -37,7 +37,12 @@ const doyenSchema = new Schema({
 
     },
 
-   faculté:{
+   faculte:{
+        type:String,
+        require:[true," Le champ facultés ne peut etre vide"]
+
+    },
+    departement:{
         type:String,
         require:[true," Le champ facultés ne peut etre vide"]
 
