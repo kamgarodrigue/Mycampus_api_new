@@ -1,6 +1,6 @@
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
-import uniqueValidator from 'mongoose-unique-validator'; 
+const mongoose  = require('mongoose');
+const Schema = mongoose.Schema;
+var  uniqueValidator  = require ('mongoose-unique-validator') ; 
 const userSchema = new Schema({
     tel:{
         type:String,
@@ -63,5 +63,5 @@ const userSchema = new Schema({
 },{timestamps:true}
 );
 userSchema.plugin(uniqueValidator);
-const User = model('user',userSchema);
-export default User;
+const User = mongoose.model('user',userSchema);
+module.exports =  User;
