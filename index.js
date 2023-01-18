@@ -7,7 +7,7 @@ const bodyParser        = require("body-parser")
        
 
 
-
+const user_route = require("./route/user_route")
 mongoose.set('useCreateIndex', true)
 mongoose.connect('mongodb://localhost:27017/mycampus',{useNewUrlParser:true,useUnifiedTopology:true})
 .then(() => console.log('Connexion à MongoDB réussie !'))
@@ -23,6 +23,6 @@ const port = process.env.port || 5000
 app.listen(port,()=>{
 
 });
-//app.use('/api/users',AuthRoute);
+app.use('/api/users',user_route);
 
 // https://shielded-falls-07947.herokuapp.com/heroku local web

@@ -37,7 +37,7 @@ const userSchema = new Schema({
 
     },
 
-   faculté:{
+   faculte:{
         type:String,
        // require:[true," Le champ universite ne peut etre vide"]
 
