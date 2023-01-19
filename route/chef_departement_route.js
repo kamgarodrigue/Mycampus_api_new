@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const upload =require('../MiddleWares/upload_user')//import corresponding middleware()
+const upload =require('../MiddleWares/upload_chef_departement')//import corresponding middleware()
 const chef_departement_controller =require('../controller/chef_departement_controller');
 const authenticate =require('../MiddleWares/Authenticate')
 

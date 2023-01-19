@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "3e5978a6-8066-4ea9-9969-59e1f77a6443",
+		"_postman_id": "2c363cea-e334-4644-b01c-fb76464c4693",
 		"name": "mycampus_new",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24085527"
+		"_exporter_id": "25419820"
 	},
 	"item": [
 		{
@@ -415,6 +415,104 @@
 								"api",
 								"typeDoyen",
 								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "chef_departement",
+			"item": [
+				{
+					"name": "enregistrement",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "doyen",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tel",
+									"value": "1334156",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "steve@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12316",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sexe",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "tao",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "Yaounde",
+									"type": "text"
+								},
+								{
+									"key": "faculte",
+									"value": "sciences",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/G:/Craft Wallpapers/16412_uhd.jpg"
+								},
+								{
+									"key": "code",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/doyen/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"doyen",
+								"register",
+								""
 							]
 						}
 					},
