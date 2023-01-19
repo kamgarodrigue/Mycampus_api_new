@@ -5,7 +5,7 @@ const authenticate =require('../MiddleWares/Authenticate')
 
 router.get('/',type_universite_controller.index);
 router.post('/store',type_universite_controller.store);
-router.get('/show',type_universite_controller.show);
+router.post('/show',type_universite_controller.show);
 router.post('/update',type_universite_controller.update);
 router.post('/destroy',type_universite_controller.destroy);
 module.exports =router

@@ -58,7 +58,7 @@ const index = (req,res,next)=>{
                 intitule:req.body.intitule,
             };
 
-            Type_universite.findByIdAndUpdate(updateData.type_universiteID,{$set:updateData})
+            Type_universite.findByIdAndUpdate(req.body.type_universiteID,{$set:updateData})
             .then(response =>{
             res.json({
                 message:'modification effectuer avec success',

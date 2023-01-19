@@ -58,7 +58,7 @@ const index = (req,res,next)=>{
                 type_user:req.body.type_user,
             };
 
-            Type_user.findByIdAndUpdate(updateData.type_userID,{$set:updateData})
+            Type_user.findByIdAndUpdate(req.body.type_userID,{$set:updateData})
             .then(response =>{
             res.json({
                 message:'modification effectuer avec success',
