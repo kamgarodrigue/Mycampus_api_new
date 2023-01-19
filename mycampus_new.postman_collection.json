@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "a2baea57-efad-413e-9822-59466efc2206",
+		"name": "mycampus_new",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15626290"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "all_users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tel",
+									"value": "1456363",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kamgarodrigue@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "sexe",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "faculte",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "departement",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "filiere",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Rodrigue/Desktop/photos ict/046B7698-80F3-4D78-B896-E6F51E2C7192_1_105_c.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tel",
+									"value": "12345",
+									"type": "text"
+								},
+								{
+									"key": "userID",
+									"value": "63c7e6d218b2d61e0c5f8a26",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "kamga@gmailcom",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "sexe",
+									"value": "sexe",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "kamga rodrigue",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "faculte",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "$2a$10$kC34OeT84oncABrmLdVz7O5gMw/AWwlMVZ3xk/tS3nEYoDRgcdovC",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Rodrigue/Desktop/photos ict/2B5F7C7D-D00A-4392-928D-A052606E71FD_1_105_c.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/update",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userID\":\"63c7e6d218b2d61e0c5f8a26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/destroy",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userID\":\"63c7e6d218b2d61e0c5f8a26\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/users/show",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"users",
+								"show"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -94,10 +94,16 @@ const show =(req,res,next)=>{
     let userID= req.body.userID
     User.findById(userID)
     .then(response =>{
-        
+        if (response) {
+            
         res.json({
             response
         })
+        }else{
+            res.status(404).send({
+                massage:"utilisateur non existant"
+            })
+        }
     })
     .catch(error =>{
         res.json({
@@ -118,12 +124,12 @@ const show =(req,res,next)=>{
             faculte:req.body.faculte,
             departement:req.body.departement,
             filiere:req.body.filiere,
-            password:password,
+            password:req.body.password,
         };
         if(req.file){
             updateData.avatar = req.file.path
          
-            User.findById(updateData.userID).then(user=>{
+            User.findById(req.body.userID).then(user=>{
                 console.log(user);
                 fs.unlink(user.avatar, (err) => {
                     if (err) {
@@ -132,7 +138,7 @@ const show =(req,res,next)=>{
                     }});
           });
         }
-        User.findByIdAndUpdate(updateData.userID,{$set:updateData})
+        User.findByIdAndUpdate(req.body.userID,{$set:updateData})
     .then(response =>{
         res.json({
             message:'modification effectuer avec success',
@@ -160,7 +166,7 @@ const show =(req,res,next)=>{
         .then(response =>{
           
             res.json({
-                message:'personaliter  supprimer   avec succes',
+                message:'user  supprimer   avec succes',
           })
         })
         .catch(error =>{
