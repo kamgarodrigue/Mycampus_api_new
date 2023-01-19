@@ -18,5 +18,14 @@
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
     "nodemon": "^2.0.15"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kamgarodrigue/Mycampus_api_new.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/kamgarodrigue/Mycampus_api_new/issues"
+  },
+  "homepage": "https://github.com/kamgarodrigue/Mycampus_api_new#readme"
 }

@@ -1,6 +1,7 @@
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
-import uniqueValidator from 'mongoose-unique-validator'; 
+const mongoose  = require('mongoose');
+const Schema = mongoose.Schema;
+var  uniqueValidator  = require ('mongoose-unique-validator') ;
+
 const doyenSchema = new Schema({
     tel:{
         type:String,
@@ -42,12 +43,6 @@ const doyenSchema = new Schema({
         require:[true," Le champ facultés ne peut etre vide"]
 
     },
-    departement:{
-        type:String,
-        require:[true," Le champ facultés ne peut etre vide"]
-
-    },
-   
     avatar:{
         type:String,
     },
@@ -64,5 +59,5 @@ const doyenSchema = new Schema({
 },{timestamps:true}
 );
 doyenSchema.plugin(uniqueValidator);
-const Doyen = model('doyen',doyenSchema);
-export default Doyen;
+const Doyen = mongoose.model('doyen',doyenSchema);
+module.exports =  Doyen;

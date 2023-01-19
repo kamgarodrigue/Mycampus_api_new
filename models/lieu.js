@@ -12,7 +12,7 @@ const lieuSchema = new Schema({
         require:[true," Le champ universite ne peut etre vide"]
 
     },
-   faculté:{
+   faculte:{
         type:String,
         require:[true," Le champ universite ne peut etre vide"]
 
