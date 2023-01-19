@@ -1,7 +1,8 @@
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
-import uniqueValidator from 'mongoose-unique-validator'; 
-const userSchema = new Schema({
+const mongoose  = require('mongoose');
+const Schema = mongoose.Schema;
+var  uniqueValidator  = require ('mongoose-unique-validator') ; 
+
+const minsupSchema = new Schema({
     tel:{
         type:String,
         unique: true,
@@ -45,6 +46,6 @@ const userSchema = new Schema({
      
 },{timestamps:true}
 );
-userSchema.plugin(uniqueValidator);
-const User = model('user',userSchema);
-export default User;
+minsupSchema.plugin(uniqueValidator);
+const Minsup = mongoose.model('minsup',minsupSchema);
+module.exports =  Minsup;
