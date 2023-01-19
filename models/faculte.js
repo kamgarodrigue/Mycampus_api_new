@@ -1,7 +1,8 @@
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
-import uniqueValidator from 'mongoose-unique-validator'; 
-const falculteSchema = new Schema({
+const mongoose  = require('mongoose');
+const Schema = mongoose.Schema;
+var  uniqueValidator  = require ('mongoose-unique-validator') ; 
+
+const faculteSchema = new Schema({
     intitule:{
         type:String,
         unique: true,
@@ -34,6 +35,6 @@ const falculteSchema = new Schema({
      
 },{timestamps:true}
 );
-universiteSchema.plugin(uniqueValidator);
-const Falculte = model('falculte',falculteSchema);
-export default Falculte;
+faculteSchema.plugin(uniqueValidator);
+const Faculte = mongoose.model('faculte',faculteSchema);
+module.exports =  Faculte;
