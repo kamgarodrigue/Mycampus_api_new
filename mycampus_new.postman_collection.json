@@ -295,7 +295,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"intitule\":\"etudiant\"\r\n}",
+							"raw": "{\r\n    \"intitule\":\"vice doyen\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -303,7 +303,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/api/typeDoyen/register",
+							"raw": "http://127.0.0.1:5000/api/typeDoyen/store",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -315,7 +315,7 @@
 							"path": [
 								"api",
 								"typeDoyen",
-								"register"
+								"store"
 							]
 						}
 					},
@@ -328,7 +328,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type_doyenID\":\"etudiant\"\r\n}",
+							"raw": "{\r\n    \"type_doyenID\":\"63c92ab60aecbd26a0a121a6\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -361,7 +361,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type_doyenID\":\"etudiant\"\r\n}",
+							"raw": "{\r\n    \"intitule\":\"doyen\",\r\n    \"type_doyenID\":\"63c940e390184d386003e0ff\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -394,7 +394,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type_doyenID\":\"etudiant\"\r\n}",
+							"raw": "{\r\n    \"type_doyenID\":\"63c92ab60aecbd26a0a121a6\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

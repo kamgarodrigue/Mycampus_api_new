@@ -15,6 +15,8 @@ const lieu_route = require("./route/lieu_route")
 const minsup_route = require("./route/minsup_route")
 const type_doyen_route = require("./route/type_doyen_route")
 const type_user_route = require("./route/type_user_route")
+const type_universite_route = require("./route/type_universite_route")
+const type_recteur_route = require("./route/type_reteur_route")
 
 mongoose.set('useCreateIndex', true)
 mongoose.connect('mongodb://127.0.0.1:27017/MycampusPro',{useNewUrlParser:true,useUnifiedTopology:true})
@@ -41,5 +43,7 @@ app.use('/api/lieu',lieu_route);
 app.use('/api/minsup',minsup_route);
 app.use('/api/typeDoyen',type_doyen_route);
 app.use('/api/typeUser',type_user_route);
+app.use('/api/typeUniversite',type_universite_route);
+app.use('/api/typeRecteur',type_recteur_route);
 
 // https://shielded-falls-07947.herokuapp.com/heroku local web

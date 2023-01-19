@@ -53,12 +53,13 @@ const index = (req,res,next)=>{
 
         const update =(req,res,next) =>{
             console.log(req.body.type_doyenID);
+            console.log(req.body.intitule);
             
-            let updateData={
+            let updateData ={
                 intitule:req.body.intitule,
             };
 
-            Type_doyen.findByIdAndUpdate(updateData.type_doyenID,{$set:updateData})
+            Type_doyen.findByIdAndUpdate(req.body.type_doyenID,{$set:updateData})
             .then(response =>{
             res.json({
                 message:'modification effectuer avec success',

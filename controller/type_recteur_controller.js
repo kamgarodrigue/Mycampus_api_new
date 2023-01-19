@@ -1,11 +1,11 @@
-const Type_universite = require('../models/type_universite');
+const Type_recteur = require('../models/type_recteur');
 const jwt = require('jsonwebtoken');
 const { json } = require('body-parser');
 const { userInfo, type } = require('node:os');
 const fs = require('fs')
 
 const index = (req,res,next)=>{
-    Type_universite.find()
+    Type_recteur.find()
     .then(response =>{
         res.json({
             response
@@ -19,13 +19,13 @@ const index = (req,res,next)=>{
     }
 
     const store=(req,res,next)=>{
-            let type_universite = new Type_universite({
+            let type_recteur = new Type_recteur({
                 intitule : req.body.intitule
             });
             console.log(req.body.intitule)
-            type_universite.save().then(type_universite =>{
+            type_recteur.save().then(type_recteur =>{
                res.json({
-                   message:"type_universite creer avec succes"
+                   message:"Type recteur creer avec succes"
                })
             }).catch(error=>{
                    res.json({
@@ -35,9 +35,9 @@ const index = (req,res,next)=>{
     }
 
     const show =(req,res,next)=>{
-        let type_universiteID = req.body.type_universiteID
+        let type_recteurID = req.body.type_recteurID
 
-        Type_universite.findById(type_universiteID)
+        Type_recteur.findById(type_recteurID)
         .then(response =>{ 
             res.json({
                 response
@@ -52,13 +52,13 @@ const index = (req,res,next)=>{
 
 
         const update =(req,res,next) =>{
-            console.log(req.body.type_universiteID);
+            console.log(req.body.type_recteurID);
             
             let updateData={
                 intitule:req.body.intitule,
             };
 
-            Type_universite.findByIdAndUpdate(updateData.type_universiteID,{$set:updateData})
+            Type_recteur.findByIdAndUpdate(updateData.type_recteurID,{$set:updateData})
             .then(response =>{
             res.json({
                 message:'modification effectuer avec success',
@@ -73,11 +73,11 @@ const index = (req,res,next)=>{
        
         const destroy =(req,res,next)=>{
          
-            let type_universiteID = req.body.type_universiteID
-            Type_universite.findById(type_universiteID).then(type_universite=>{
-                console.log(type_universite);
+            let type_recteurID = req.body.type_recteurID
+            Type_recteur.findById(type_recteurID).then(type_recteur=>{
+                console.log(type_recteur);
                 });
-                    Type_universite.findByIdAndRemove(type_universiteID)
+                    Type_recteur.findByIdAndRemove(type_recteurID)
                         .then(response =>{
                             res.json({
                                 message:'personaliter  supprimer   avec succes',
