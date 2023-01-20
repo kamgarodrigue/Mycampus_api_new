@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const upload =require('../MiddleWares/upload_user')//import corresponding middleware()
+const upload =require('../MiddleWares/upload_doyen')//import corresponding middleware()
 const doyen_controller =require('../controller/doyen_controller');
 const authenticate =require('../MiddleWares/Authenticate')
 
