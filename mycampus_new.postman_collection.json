@@ -58,17 +58,17 @@
 								},
 								{
 									"key": "sexe",
-									"value": "",
+									"value": "m",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "",
+									"value": "ryan",
 									"type": "text"
 								},
 								{
 									"key": "universite",
-									"value": "",
+									"value": "uy1",
 									"type": "text"
 								},
 								{
@@ -94,7 +94,7 @@
 								{
 									"key": "avatar",
 									"type": "file",
-									"src": "/C:/Users/Rodrigue/Desktop/photos ict/046B7698-80F3-4D78-B896-E6F51E2C7192_1_105_c.jpeg"
+									"src": "/C:/Users/AARC/Pictures/wall/89649a124997447c.jpg"
 								}
 							]
 						},
@@ -860,6 +860,582 @@
 								"api",
 								"typeUser",
 								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "faculte",
+			"item": [
+				{
+					"name": "get_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/faculte/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"faculte",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "intitule",
+									"value": "geoscience",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "Uy1",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "3.853105842073902",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "11.489854293182882",
+									"type": "text"
+								},
+								{
+									"key": "destription",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/7YLRN5AEUNIAFM2T2VIQX4NFZ4.jpg"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/47b86b0433d298947ff2407b4e9289f8.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/faculte/store",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"faculte",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"faculteID\":\"63cbe8fec2444923409a28d1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/faculte/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"faculte",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"faculteID\":\"63cbe8fec2444923409a28d1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/faculte/destroy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"faculte",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "intitule",
+									"value": "lettre",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "Uy1",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "3.853105842073902",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "11.489854293182882",
+									"type": "text"
+								},
+								{
+									"key": "destription",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/619c29bae7fa43.51540353.jpg"
+								},
+								{
+									"key": "faculteID",
+									"value": "63cab7bce270322db4afd927",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/faculte/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"faculte",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lieu",
+			"item": [
+				{
+					"name": "get_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/lieu/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lieu",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "intitule",
+									"value": "Amphi502",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "Uy1",
+									"type": "text"
+								},
+								{
+									"key": "faculte",
+									"value": "Faculte des science",
+									"type": "text"
+								},
+								{
+									"key": "departement",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "3.85557723533884",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "11.501247901389668",
+									"type": "text"
+								},
+								{
+									"key": "destription",
+									"value": "this is a test",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "salle ",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/wp7424751.jpg"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/237659431019_status_e73e7b4516c24f84938d3058e42a1b78.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/lieu/store",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lieu",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "intitule",
+									"value": "Amphi1003",
+									"type": "text"
+								},
+								{
+									"key": "universite",
+									"value": "Uy1",
+									"type": "text"
+								},
+								{
+									"key": "faculte",
+									"value": "Faculte des lettre",
+									"type": "text"
+								},
+								{
+									"key": "departement",
+									"value": "none",
+									"type": "text"
+								},
+								{
+									"key": "lat",
+									"value": "3.85557723533884",
+									"type": "text"
+								},
+								{
+									"key": "long",
+									"value": "11.501247901389668",
+									"type": "text"
+								},
+								{
+									"key": "destription",
+									"value": "this is a test",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "salle ",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/wp7424751.jpg"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/237659431019_status_e73e7b4516c24f84938d3058e42a1b78.jpg"
+								},
+								{
+									"key": "lieuID",
+									"value": "63cbfaffa9662919d8e6300a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/lieu/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lieu",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "show",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lieuID\":\"63cbfaffa9662919d8e6300a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/lieu/show",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lieu",
+								"show"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "destroy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"lieuID\":\"63cbfaffa9662919d8e6300a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/lieu/destroy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"lieu",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "minsup",
+			"item": [
+				{
+					"name": "get_all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/minsup/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"minsup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "tel",
+									"value": "1334156",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "steve@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "12316",
+									"type": "text"
+								},
+								{
+									"key": "sexe",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "tao",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/AARC/Pictures/wall/53ed2c820ae3420ef0bd0750262b28df(1)-1.jpg"
+								},
+								{
+									"key": "code",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/minsup/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"minsup",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"steve@gmail.com\",\r\n    \"password\":\"12316\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/api/minsup/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"minsup",
+								"login",
+								""
 							]
 						}
 					},

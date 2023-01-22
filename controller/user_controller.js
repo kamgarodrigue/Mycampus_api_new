@@ -38,7 +38,6 @@ const register=(req,res,next)=>{
             filiere:req.body.filiere,
             
 
-
             password:hashedPass
         });
         if(req.file){

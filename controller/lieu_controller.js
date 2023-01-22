@@ -100,12 +100,26 @@ const update =(req,res,next) =>{
 
 }
 
-updateimage=(req,res,next)=>{
+const updateimage=(req,res,next)=>{
     let lieuID=req.body.lieuID;
     var path ='';
+    let lieu = new Lieu();
+
     Lieu.findById(req.body.lieuID)
     .then(response =>{
-        path =response.image.split(',')});
+        path =response.image }).catch(
+            res.json({
+                message:'No location found'
+            })
+        );
+
+        if(req.files){
+            req.files.forEach(function(files,index,array) {
+                path = path +files.path +',';
+            });
+            path =path.substring(0,path.lastIndexOf(","))
+            lieu.image = path;
+        }
 }
    
 const destroy =(req,res,next)=>{
@@ -144,5 +158,5 @@ path.forEach(path=>{
 
 }
 module.exports={
-    index,destroy,show,store,update
+    index,destroy,show,store,update,updateimage
 }

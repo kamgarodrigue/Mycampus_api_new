@@ -57,7 +57,6 @@ const index = (req,res,next)=>{
         var password = req.body.password;
         minsup.findOne({$or:[{email:userName},{phone:userName}]})
         .then(minsup=>{
-         //   console.log(autorite);
             if(minsup){
                 bcrypt.compare(password,minsup.password,function(err,result){
                     if(err){

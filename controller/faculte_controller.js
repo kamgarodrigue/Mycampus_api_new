@@ -4,7 +4,7 @@ const fs = require('fs')
 
 //voir la liste des faculte
 const index = (req,res,next)=>{
-    Lieu.find()
+    Faculte.find()
 .then(response =>{
     res.json({
         response
@@ -45,7 +45,7 @@ const store =(req,res,next)=>{
     if(req.files){
         let path ='';
         req.files.forEach(function(files,index,array) {
-            path =path +files.path +',';
+            path = path + files.path +',';
         });
         path =path.substring(0,path.lastIndexOf(","))
         faculte.image = path;
