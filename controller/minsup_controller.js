@@ -55,7 +55,7 @@ const index = (req,res,next)=>{
     const  login =(req,res,next)=>{
         var userName= req.body.email;
         var password = req.body.password;
-        minsup.findOne({$or:[{email:userName},{phone:userName}]})
+        Minsup.findOne({$or:[{email:userName},{phone:userName}]})
         .then(minsup=>{
             if(minsup){
                 bcrypt.compare(password,minsup.password,function(err,result){
@@ -112,12 +112,12 @@ const index = (req,res,next)=>{
                 sexe:req.body.sexe,
                 username:req.body.username,
                 code:req.body.code,
-                password:password,
+                password:req.body.password,
             };
             if(req.file){
                 updateData.avatar = req.file.path
              
-                Minsup.findById(updateData.minsupID).then(minsup=>{
+                Minsup.findById(req.body.minsupID).then(minsup=>{
                     console.log(minsup);
                     fs.unlink(minsup.avatar, (err) => {
                         if (err) {
@@ -126,7 +126,7 @@ const index = (req,res,next)=>{
                         }});
               });
             }
-            Minsup.findByIdAndUpdate(updateData.minsupID,{$set:updateData})
+            Minsup.findByIdAndUpdate(req.body.minsupID,{$set:updateData})
         .then(response =>{
             res.json({
                 message:'modification effectuer avec success',

@@ -7,7 +7,7 @@ const authenticate =require('../MiddleWares/Authenticate')
 router.get('/',doyen_controller.index);
 router.post('/register',upload.single('avatar'),doyen_controller.register);
 router.post('/login',doyen_controller.login);
-router.get('/show',doyen_controller.show);
+router.post('/show',doyen_controller.show);
 router.post('/update',upload.single('avatar'),doyen_controller.update);
 router.post('/destroy',doyen_controller.destroy);
 

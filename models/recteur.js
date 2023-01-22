@@ -1,6 +1,7 @@
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
-import uniqueValidator from 'mongoose-unique-validator'; 
+const mongoose  = require('mongoose');
+const Schema = mongoose.Schema;
+var  uniqueValidator  = require ('mongoose-unique-validator') ; 
+
 const recteurSchema = new Schema({
     tel:{
         type:String,
@@ -55,5 +56,5 @@ const recteurSchema = new Schema({
 },{timestamps:true}
 );
 recteurSchema.plugin(uniqueValidator);
-const Recteur = model('recteur',recteurSchema);
-export default  Recteur;
+const Recteur = mongoose.model('recteur',recteurSchema);
+module.exports =  Recteur;

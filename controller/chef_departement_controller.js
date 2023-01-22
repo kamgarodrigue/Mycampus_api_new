@@ -123,12 +123,12 @@ const index = (req,res,next)=>{
                 faculte:req.body.faculte,
                 departement:req.body.departement,
                 code:req.body.code,
-                password:password,
+                password:req.body.password,
             };
             if(req.file){
                 updateData.avatar = req.file.path
              
-                Chef_departement.findById(updateData.chefID).then(chef_departement=>{
+                Chef_departement.findById(req.body.chefID).then(chef_departement=>{
                     console.log(chef_departement);
                     fs.unlink(chef_departement.avatar, (err) => {
                         if (err) {
@@ -137,7 +137,7 @@ const index = (req,res,next)=>{
                         }});
               });
             }
-            Chef_departement.findByIdAndUpdate(updateData.chefID,{$set:updateData})
+            Chef_departement.findByIdAndUpdate(req.body.chefID,{$set:updateData})
         .then(response =>{
             res.json({
                 message:'modification effectuer avec success',

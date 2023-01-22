@@ -19,7 +19,7 @@ const index = (req,res,next)=>{
     }
 
     const store=(req,res,next)=>{
-            let Type_lieu = new Type_lieu({
+            let type_lieu = new Type_lieu({
                 intitule : req.body.intitule
             });
             console.log(req.body.intitule)
@@ -58,7 +58,7 @@ const index = (req,res,next)=>{
                 intitule:req.body.intitule,
             };
 
-            Type_lieu.findByIdAndUpdate(updateData.type_lieu,{$set:updateData})
+            Type_lieu.findByIdAndUpdate(req.body.type_lieuID,{$set:updateData})
             .then(response =>{
             res.json({
                 message:'modification effectuer avec success',
@@ -80,7 +80,7 @@ const index = (req,res,next)=>{
                 Type_lieu.findByIdAndRemove(type_lieuID)
                         .then(response =>{
                             res.json({
-                                message:'personaliter  supprimer   avec succes',
+                                message:'suppression effectue avec succes',
                             })
                         })
                         .catch(error =>{

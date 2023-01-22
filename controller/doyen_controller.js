@@ -58,7 +58,7 @@ const index = (req,res,next)=>{
     const  login =(req,res,next)=>{
         var userName= req.body.email;
         var password = req.body.password;
-        doyen.findOne({$or:[{email:userName},{phone:userName}]})
+        Doyen.findOne({$or:[{email:userName},{phone:userName}]})
         .then(doyen=>{
          //   console.log(autorite);
             if(doyen){
@@ -92,7 +92,7 @@ const index = (req,res,next)=>{
 
     const show =(req,res,next)=>{
         let doyenID= req.body.doyenID
-        Minsup.findById(doyenID)
+        Doyen.findById(doyenID)
         .then(response =>{
             
             res.json({
@@ -119,12 +119,12 @@ const index = (req,res,next)=>{
                 universite:req.body.universite,
                 faculte:req.body.faculte,
                 code:req.body.code,
-                password:password,
+                password:req.body.password,
             };
             if(req.file){
                 updateData.avatar = req.file.path
              
-                Doyen.findById(updateData.doyenID).then(doyen=>{
+                Doyen.findById(req.body.doyenID).then(doyen=>{
                     console.log(doyen);
                     fs.unlink(doyen.avatar, (err) => {
                         if (err) {
@@ -133,7 +133,7 @@ const index = (req,res,next)=>{
                         }});
               });
             }
-            Doyen.findByIdAndUpdate(updateData.doyenID,{$set:updateData})
+            Doyen.findByIdAndUpdate(req.body.doyenID,{$set:updateData})
         .then(response =>{
             res.json({
                 message:'modification effectuer avec success',
