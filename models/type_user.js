@@ -7,10 +7,11 @@ const type_userSchema = new Schema({
         type:String,
         unique: true,
 },
+    num_reference:{
+        type:String,
+    },
 
-
-   
-     
+    
 },{timestamps:true}
 );
 type_userSchema.plugin(uniqueValidator);

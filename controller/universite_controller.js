@@ -71,7 +71,6 @@ const store =(req,res,next)=>{
 
 
 const update =(req,res,next) =>{
-    var logo="";
     let univID =req.body.univID
     let updateData={
         intitule:req.body.intitule,
@@ -83,56 +82,31 @@ const update =(req,res,next) =>{
         type:req.body.type,
         
     }
-    Universite.findById(univID)
-    .then(response =>{
-        res.json({
-            response
-        })
-    })
-    if(response == null)
-    {
-        if(req.files){
-        let path = response.logo + ",";
-        req.files.forEach(function(files,index,array) {
-            path = path + files.path +',';
+    var path1 = '';
+    if(req.files){
+        Universite.findById(req.body.univID).then(universite=>{
+           path1 = universite.logo + ',';
+
+           req.files.forEach(function(files,index,array) {
+                path1 = path1 + files.path +',';
+             });
+            path1 =path1.substring(0,path1.lastIndexOf(","))
+            updateData.logo = path1;
+
+            Universite.findByIdAndUpdate(req.body.univID,{$set:updateData})
+                 .then(response=>{
+                    res.json({
+                        message:'modification effectuer avec success',
+                    })
+                })
+                .catch(error =>{
+                    res.json({
+                        message:'une erreur est survenu lors de la modification de votre compte' 
+                })
+            })
         });
-        path =path.substring(0,path.lastIndexOf(","))
-        updateData.logo = path;
-        }
-    }else{
-        if(req.files){
-            let path = '';
-            req.files.forEach(function(files,index,array) {
-                path = path + files.path +',';
-            });
-            path =path.substring(0,path.lastIndexOf(","))
-            updateData.logo = path;
-            }
     }
-    
-    Universite.findByIdAndUpdate(univID,{$set:updateData})
-.then(response =>{
-    res.json({
-        message:'Universite modifier  avec succes',
-        
-  })
-})
-.catch(error =>{
-   res.json({
-       message:'une erreur est survenu lors de la modification du lieu'
-   })
-})
-    
-
 }
-
-/*updateimage=(req,res,next)=>{
-    let faculteID=req.body.faculteID;
-    var path ='';
-    Faculte.findById(req.body.faculteID)
-    .then(response =>{
-        path =response.image.split(',')});
-}*/
    
 const destroy =(req,res,next)=>{
     var path ='';

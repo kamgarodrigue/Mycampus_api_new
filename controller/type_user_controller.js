@@ -20,7 +20,8 @@ const index = (req,res,next)=>{
 
     const store=(req,res,next)=>{
             let type_users = new Type_user({
-                type_user : req.body.type_user
+                type_user : req.body.type_user,
+                num_reference : req.body.num_reference
             });
             console.log(req.body.type_user)
             type_users.save().then(type_users =>{
@@ -56,6 +57,7 @@ const index = (req,res,next)=>{
             
             let updateData={
                 type_user:req.body.type_user,
+                num_reference : req.body.num_reference
             };
 
             Type_user.findByIdAndUpdate(req.body.type_userID,{$set:updateData})

@@ -71,7 +71,7 @@ const store =(req,res,next)=>{
 
 
 const update =(req,res,next) =>{
-    var image="";
+    
     let lieuID =req.body.lieuID
     let updateData={
         intitule:req.body.intitule,
@@ -82,22 +82,32 @@ const update =(req,res,next) =>{
         long:req.body.long,
         destription:req.body.destription,  
         type:req.body.type,   
-    }
-    
-    Lieu.findByIdAndUpdate(lieuID,{$set:updateData})
-    .then(response =>{
-    res.json({
-        message:'Lieu modifier  avec succes',
-        
-  })
-})
-.catch(error =>{
-   res.json({
-       message:'une erreur est survenu lors de la modification du lieu'
-   })
-})
-    
+    };
 
+    var path1="";
+    if(req.files){
+        Lieu.findById(req.body.lieuID).then(lieu=>{
+           path1 = lieu.image + ',';
+
+           req.files.forEach(function(files,index,array) {
+                path1 = path1 + files.path +',';
+             });
+            path1 =path1.substring(0,path1.lastIndexOf(","))
+            updateData.image = path1;
+
+            Lieu.findByIdAndUpdate(req.body.lieuID,{$set:updateData})
+                 .then(response=>{
+                    res.json({
+                        message:'modification effectuer avec success',
+                    })
+                })
+                .catch(error =>{
+                    res.json({
+                        message:'une erreur est survenu lors de la modification de votre compte' 
+                })
+            })
+        });
+    }
 }
 
 const updateimage=(req,res,next)=>{
