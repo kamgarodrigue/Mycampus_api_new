@@ -6,12 +6,7 @@ const type_lieuSchema = new Schema({
     intitule:{
         type:String,
         unique: true,
-},
-image:{
-    type:String,
-},
-
-   
+},  
      
 },{timestamps:true}
 );

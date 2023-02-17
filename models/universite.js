@@ -26,6 +26,9 @@ const universiteSchema = new Schema({
     logo:{
         type:String
     },
+    image:{
+        type:String
+    },
     destription:{
         type:String,
         
@@ -38,7 +41,7 @@ const universiteSchema = new Schema({
         require:[true," Le champ type ne peut etre vide"]
 
     },
-     
+
 },{timestamps:true}
 );
 universiteSchema.plugin(uniqueValidator);

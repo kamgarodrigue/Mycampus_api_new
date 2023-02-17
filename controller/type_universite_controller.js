@@ -23,9 +23,9 @@ const index = (req,res,next)=>{
                 intitule : req.body.intitule
             });
             console.log(req.body.intitule)
-            type_doyen.save().then(type_doyen =>{
+            type_universite.save().then(type_universite =>{
                res.json({
-                   message:"Type_doyen creer avec succes"
+                   message:"type_universite creer avec succes"
                })
             }).catch(error=>{
                    res.json({
@@ -35,9 +35,9 @@ const index = (req,res,next)=>{
     }
 
     const show =(req,res,next)=>{
-        let type_doyenID = req.body.type_doyenID
+        let type_universiteID = req.body.type_universiteID
 
-        Type_doyen.findById(type_doyenID)
+        Type_universite.findById(type_universiteID)
         .then(response =>{ 
             res.json({
                 response
@@ -52,13 +52,13 @@ const index = (req,res,next)=>{
 
 
         const update =(req,res,next) =>{
-            console.log(req.body.type_doyenID);
+            console.log(req.body.type_universiteID);
             
             let updateData={
                 intitule:req.body.intitule,
             };
 
-            Type_doyen.findByIdAndUpdate(updateData.type_doyenID,{$set:updateData})
+            Type_universite.findByIdAndUpdate(req.body.type_universiteID,{$set:updateData})
             .then(response =>{
             res.json({
                 message:'modification effectuer avec success',
@@ -73,11 +73,11 @@ const index = (req,res,next)=>{
        
         const destroy =(req,res,next)=>{
          
-            let type_doyenID = req.body.type_doyenID
-            Type_doyen.findById(type_doyenID).then(type_doyen=>{
-                console.log(type_doyen);
+            let type_universiteID = req.body.type_universiteID
+            Type_universite.findById(type_universiteID).then(type_universite=>{
+                console.log(type_universite);
                 });
-                    Type_doyen.findByIdAndRemove(type_doyenID)
+                    Type_universite.findByIdAndRemove(type_universiteID)
                         .then(response =>{
                             res.json({
                                 message:'personaliter  supprimer   avec succes',

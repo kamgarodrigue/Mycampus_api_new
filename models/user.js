@@ -53,12 +53,9 @@ const userSchema = new Schema({
     avatar:{
         type:String,
     },
-      
-    
-    
-     
-    
-   
+    code:{
+        type:String,
+    },  
      
 },{timestamps:true}
 );

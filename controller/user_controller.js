@@ -36,9 +36,8 @@ const register=(req,res,next)=>{
             faculte:req.body.faculte,
             departement:req.body.departement,
             filiere:req.body.filiere,
+            code:req.body.code,
             
-
-
             password:hashedPass
         });
         if(req.file){
@@ -46,7 +45,7 @@ const register=(req,res,next)=>{
         }
         user.save().then(user =>{
            res.json({
-               message:"visiteur creer avec succes"
+               message:"Enregistre avec succes"
            })
         }).catch(error=>{
                res.json({
@@ -124,6 +123,7 @@ const show =(req,res,next)=>{
             faculte:req.body.faculte,
             departement:req.body.departement,
             filiere:req.body.filiere,
+            code:req.body.code,
             password:req.body.password,
         };
         if(req.file){
@@ -166,7 +166,7 @@ const show =(req,res,next)=>{
         .then(response =>{
           
             res.json({
-                message:'user  supprimer   avec succes',
+                message:'user supprimer avec succes',
           })
         })
         .catch(error =>{
