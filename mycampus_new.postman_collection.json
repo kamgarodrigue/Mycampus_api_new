@@ -1669,19 +1669,34 @@
 									"type": "text"
 								},
 								{
-									"key": "document",
-									"type": "file",
-									"src": "/D:/the aarc/ict/ICT L3/S1/ict 301/DEVOIR ICT 301.pdf"
-								},
-								{
 									"key": "type",
 									"value": "commiunique",
 									"type": "text"
 								},
 								{
-									"key": "document",
+									"key": "document[]",
 									"type": "file",
-									"src": "/D:/the aarc/ict/ICT L3/S1/ict 301/Iterations.pdf"
+									"src": []
+								},
+								{
+									"key": "etat",
+									"value": "nont sent",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "codeRecteur",
+									"type": "text"
+								},
+								{
+									"key": "Chosen[]",
+									"value": "fac1",
+									"type": "text"
+								},
+								{
+									"key": "Chosen[]",
+									"value": "fac2",
+									"type": "text"
 								}
 							]
 						},

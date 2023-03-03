@@ -33,6 +33,14 @@ const annonceSchema = new Schema({
     document:{
         type:String,
     },
+    etat:{
+        type:String,
+        require:[true," Le champ description ne peut etre vide"]
+    },
+    code:{
+        type:String,
+        require:[true," Le champ description ne peut etre vide"]
+    },
 
 },{timestamps:true}
 );

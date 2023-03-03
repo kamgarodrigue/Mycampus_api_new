@@ -6,6 +6,9 @@ const { userInfo } = require('node:os');
 const fs = require('fs');
 const { response } = require('express');
 
+const faculte_controller = require("./faculte_controller");
+const Faculte = require('../models/faculte')
+
 const index = (req,res,next)=>{
     Annonce.find()
     .then(response =>{
@@ -21,40 +24,9 @@ const index = (req,res,next)=>{
 }
 
 const store = (req,res,next)=>{
-    let annonce = new Annonce({
-        titre:req.body.titre,
-        description:req.body.description,
-        minsup:req.body.minsup,
-        universite:req.body.universite,
-        faculte:req.body.faculte,
-        departement:req.body.departement,
-        filiere:req.body.filiere,
-        type:req.body.type,
-        
-    });
-
-    if(req.files){
-        let path ='';
-        req.files.forEach(function(files,index,array) {
-            path = path + files.path +',';
-        });
-        path =path.substring(0,path.lastIndexOf(","))
-        annonce.document = path;
-    }else{
-        annonce.document = "none"
-    }
-
-    annonce.save().then(response =>{
-        res.json({
-            message:"Enregistre avec success",
-            response
-        })
-    }).catch(error=>{
-        res.json({
-            error:error.message,
-        })
-    })
+    storing(req,res);
 }
+
 
 const show =(req,res,next)=>{
     let annonceID=req.body.annonceID
@@ -87,6 +59,7 @@ const update = (req,res,next) =>{
         departement:req.body.departement,
         filiere:req.body.filiere,
         type:req.body.type,
+        etat:req.body.etat,
     };
 
     var path1 = '';
@@ -239,4 +212,114 @@ const ByFiliere =(req,res,next)=>{
 }
 module.exports={
     index,destroy,show,store,update,ByMinsup,ByUniversite,ByFaculte,ByDepartement,ByFiliere
+}
+
+/****************************************function for adding annonces**************************************/
+function storing(request,res){
+
+    var facs = null;
+
+    switch(request.body.code)
+    {
+        case "codeRecteur" : 
+                var Annonces;
+
+                var doc = "none";
+
+                var titre = request.body.titre;
+                var description = request.body.description;
+                var minsup = request.body.minsup;
+                var universite = request.body.universite;
+                var departement = request.body.departement;
+                var filiere = request.body.filiere;
+                var type = request.body.type;
+                var etat = request.body.etat;
+                var code = request.body.code;
+
+                if(request.files){
+                    let path ='';
+                    request.files.forEach(function(files,index,array) {
+                        path = path + files.path +',';
+                    });
+                    path =path.substring(0,path.lastIndexOf(","))
+                    doc = path;
+                }else{
+                    doc = "none"
+                }
+
+                    Annonces = request.body.Chosen.map(chose => {
+
+                        return {
+                            titre:titre,
+                            description:description,
+                            minsup:minsup,
+                            universite:universite,
+                            faculte:chose,
+                            departement:departement,
+                            filiere:filiere,
+                            type:type,
+                            etat:etat,
+                            code:code,
+                            document:doc,
+                        };
+                    });
+
+            Annonce.insertMany(Annonces)
+                .then(() => {
+                console.log("Enregistre avec success");
+                res.status(200).json("Enregistre avec success");
+                })
+                .catch(err => res.status(400).json("Error: " + err));
+
+        case "codeDoyen" : 
+                var Annonces;
+
+                var doc = "none";
+
+                var titre = request.body.titre;
+                var description = request.body.description;
+                var minsup = request.body.minsup;
+                var universite = request.body.universite;
+                var faculte = request.body.faculte;
+                var filiere = request.body.filiere;
+                var type = request.body.type;
+                var etat = request.body.etat;
+                var code = request.body.code;
+
+                if(request.files){
+                    let path ='';
+                    request.files.forEach(function(files,index,array) {
+                        path = path + files.path +',';
+                    });
+                    path =path.substring(0,path.lastIndexOf(","))
+                    doc = path;
+                }else{
+                    doc = "none"
+                }
+
+                    Annonces = request.body.Chosen.map(chose => {
+
+                        return {
+                            titre:titre,
+                            description:description,
+                            minsup:minsup,
+                            universite:universite,
+                            faculte:faculte,
+                            departement:chose,
+                            filiere:filiere,
+                            type:type,
+                            etat:etat,
+                            code:code,
+                            document:doc,
+                        };
+                    });
+
+            Annonce.insertMany(Annonces)
+                .then(() => {
+                console.log("Enregistre avec success");
+                res.status(200).json("Enregistre avec success");
+                })
+                .catch(err => res.status(400).json("Error: " + err));
+
+    }
 }
