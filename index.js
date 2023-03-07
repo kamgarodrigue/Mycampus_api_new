@@ -4,6 +4,8 @@ const mongoose          = require("mongoose")
 const morgan            = require("morgan")
 const bodyParser        = require("body-parser")  
 // AuthRoute         = require("./Routes/Auth")
+const cors  = require("cors")
+
        
 
 
@@ -26,6 +28,7 @@ const app= express()
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(bodyParser.json())
+app.use(cors())
 
 //app.use('/upload',express.static('upload'))
 const port = process.env.port || 5000
