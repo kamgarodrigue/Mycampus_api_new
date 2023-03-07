@@ -60,6 +60,7 @@ const update = (req,res,next) =>{
         filiere:req.body.filiere,
         type:req.body.type,
         etat:req.body.etat,
+        id_annoncer:id_annoncer,
     };
 
     var path1 = '';
@@ -259,8 +260,8 @@ function storing(request,res){
                             filiere:filiere,
                             type:type,
                             etat:etat,
-                            code:code,
                             document:doc,
+                            id_annoncer:id_annoncer,
                         };
                     });
 
@@ -309,8 +310,8 @@ function storing(request,res){
                             filiere:filiere,
                             type:type,
                             etat:etat,
-                            code:code,
                             document:doc,
+                            id_annoncer:id_annoncer,
                         };
                     });
 

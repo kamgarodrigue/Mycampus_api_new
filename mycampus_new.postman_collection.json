@@ -1697,6 +1697,11 @@
 									"key": "Chosen[]",
 									"value": "fac2",
 									"type": "text"
+								},
+								{
+									"key": "id_annoncer",
+									"value": "123456780",
+									"type": "text"
 								}
 							]
 						},

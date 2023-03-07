@@ -37,7 +37,7 @@ const annonceSchema = new Schema({
         type:String,
         require:[true," Le champ description ne peut etre vide"]
     },
-    code:{
+    id_annoncer:{
         type:String,
         require:[true," Le champ description ne peut etre vide"]
     },
